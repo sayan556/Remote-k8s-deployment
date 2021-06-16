@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+        - name: apache2-container
+          image: akashmukh/apache2-k8s:apache2-v1
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end
