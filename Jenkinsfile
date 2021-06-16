@@ -1,6 +1,6 @@
 def remote = [:]
 remote.name = 'test'
-remote.host = '<remote IP>'
+remote.host = ''
 remote.port = 22
 remote.allowAnyHosts = true
 
@@ -10,7 +10,7 @@ pipeline {
         stage('Git Clone') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', credentialsId: '4af18a21-3317-4da0-85bc-1fbffb60821b', url: ''
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/akashmukh/Remote-k8s-deployment.git'
             }
         }
      stage('Deployment'){
