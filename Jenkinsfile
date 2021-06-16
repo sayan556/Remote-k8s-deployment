@@ -1,6 +1,6 @@
 def remote = [:]
 remote.name = 'test'
-remote.host = ''
+remote.host = '54.193.77.152'
 remote.port = 22
 remote.allowAnyHosts = true
 
@@ -17,7 +17,7 @@ pipeline {
         steps {
             script {
              // move the new changed 
-             withCredentials([usernamePassword(credentialsId: 'remoteuserID', passwordVariable: 'pass', usernameVariable: 'user')]) {
+             withCredentials([usernamePassword(credentialsId: 'akashID', passwordVariable: 'pass', usernameVariable: 'user')]) {
              remote.user = user
              remote.password = pass
              sshPut remote: remote, from: "deploy.yml", into: "/home/akash"
