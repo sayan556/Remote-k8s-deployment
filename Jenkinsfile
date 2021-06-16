@@ -10,7 +10,7 @@ pipeline {
         stage('Git Clone') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/akashmukh/Remote-k8s-deployment.git'
+                git branch: 'main', credentialsId: 'githubID', url: 'https://github.com/akashmukh/Remote-k8s-deployment.git'
             }
         }
      stage('Deployment'){
