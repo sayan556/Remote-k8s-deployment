@@ -17,7 +17,8 @@ pipeline {
         steps {
             script {
              // move the new changed 
-             withCredentials([usernamePassword(credentialsId: 'akashID', passwordVariable: 'pass', usernameVariable: 'user')]) {
+             withCredentials([usernamePassword(credentialsId: 'new', passwordVariable: 'pass', usernameVariable: 'user')]) {
+    // some block
              remote.user = user
              remote.password = pass
              sshPut remote: remote, from: "deploy.yml", into: "."
